@@ -1,0 +1,76 @@
+version: "v0.4"
+project:
+  name: "Milgrom–Segal Envelope Theorems for Arbitrary Choice Sets"
+  description: >-
+    Milgrom and Segal's Theorems 1 and 2 on [0,1], for an arbitrary nonempty
+    choice type with explicitly finite real suprema. Absolute continuity of
+    each fiber and an integrable common bound on its almost everywhere time
+    derivative's absolute value imply absolute continuity of the supremum value function,
+    without attainment. A frozen optimizer gives the interior derivative
+    identity and both one-sided derivative inequalities, including their valid
+    endpoints. If every fiber is differentiable at every interior time and
+    maximizers exist almost everywhere, every almost everywhere optimizer
+    selection has an integrable frozen-fiber derivative and satisfies the
+    integral envelope formula, including both parameter endpoints. No topology,
+    convexity, compactness or measurable structure on the choice type and no
+    measurable selector assumption are required.
+  authors:
+    - "Arthur Freitas Ramos"
+    - "David Barros Hulak"
+    - "Ruy Jose Guerra Barretto de Queiroz"
+  responsible_maintainers:
+    - "Arthur Freitas Ramos"
+  license: "BSD-3-Clause"
+repository:
+  role: "substantive-development"
+classification:
+  arxiv: ["econ.TH", "cs.GT", "math.CA"]
+  msc2020: ["26A24", "26A46", "90C31", "91B02", "03B35"]
+sources:
+  - title: "Envelope Theorems for Arbitrary Choice Sets"
+    authors: ["Paul Milgrom", "Ilya Segal"]
+    type: "paper"
+    year: 2002
+    doi: "10.1111/1468-0262.00296"
+    url: "https://web.stanford.edu/~isegal/envelope.pdf"
+    relationship: "formalizes"
+    note: "Theorems 1 and 2, Econometrica 70(2), pp. 585–586; not the entire paper."
+    author_endorsement: "not-contacted"
+automation:
+  methods:
+    - method: "AI-assisted Lean proof development"
+      system: "OpenAI Codex"
+      role: "Source inspection, proof implementation, compilation and local packaging."
+    - method: "Independent AI mathematical and implementation review"
+      system: "OpenAI Codex, separate reviewing agents"
+      role: "Exact source fidelity, quantifiers, endpoints and proof structure."
+    - method: "Lean tactic automation"
+      role: "simp, linarith, norm_num and filter reasoning; no native_decide."
+review:
+  status: "Local gate results and exact source hashes are recorded in evidence/."
+  human_review: "No human mathematical review or original-author endorsement is claimed."
+  limitations: >-
+    Scope is Theorems 1 and 2 on a real interval. No formalization of the other
+    theorems or economic applications is claimed. Challenge theorem proofs are
+    customary comparator placeholders; the implementation and Solution contain
+    no proof holes or custom axioms. Local macOS kernel replay lacks Linux
+    bubblewrap confinement. Hosted preflight and registry intake are distinct,
+    approval-dependent gates. No first-formalization or exhaustive novelty claim.
+alignment:
+  statements:
+    - lean: "MilgromSegal.absolutelyContinuous_value"
+      description: "Theorem 2 absolute continuity without any attainment assumption."
+    - lean: "MilgromSegal.derivative_identity"
+      description: "Theorem 1 interior derivative identity at any frozen optimizer."
+    - lean: "MilgromSegal.right_derivative_inequality"
+      description: "Theorem 1 right derivative inequality, including t = 0."
+    - lean: "MilgromSegal.left_derivative_inequality"
+      description: "Theorem 1 left derivative inequality, including t = 1."
+    - lean: "MilgromSegal.selected_derivative_integrable"
+      description: "Integrability of any a.e. selected frozen-fiber derivative via equality to V'."
+    - lean: "MilgromSegal.integral_envelope"
+      description: "Theorem 2 integral formula for every a.e. optimizer selection and t in [0,1]."
+    - lean: "MilgromSegal.exists_optimizer_selection"
+      description: "A.e. attainment gives an optimizer selection using ordinary choice alone."
+    - lean: "MilgromSegal.milgrom_segal"
+      description: "Combined named Theorem 2, including selection existence and integrability."

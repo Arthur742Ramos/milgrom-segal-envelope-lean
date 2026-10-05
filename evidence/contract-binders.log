@@ -1,0 +1,88 @@
+@MilgromSegal.absolutelyContinuous_value.{u_1} : ∀ {X : Type u_1} [Nonempty.{u_1 + 1} X] {f : X → ℝ → ℝ} {b : ℝ → ℝ},
+  MilgromSegal.FiniteValue.{u_1} f →
+    (∀ (x : X), AbsolutelyContinuousOnInterval.{0} (f x) 0 1) →
+      IntervalIntegrable.{0} b MeasureTheory.volume.{0} 0 1 →
+        (∀ (x : X),
+            ∀ᵐ (t : ℝ), Membership.mem.{0, 0} (Set.Icc.{0} 0 1) t → LE.le.{0} (abs.{0} (deriv.{0, 0} (f x) t)) (b t)) →
+          AbsolutelyContinuousOnInterval.{0} (MilgromSegal.value.{u_1} f) 0 1
+@MilgromSegal.derivative_identity.{u_1} : ∀ {X : Type u_1} [Nonempty.{u_1 + 1} X] {f : X → ℝ → ℝ},
+  MilgromSegal.FiniteValue.{u_1} f →
+    ∀ {t : ℝ},
+      Membership.mem.{0, 0} (Set.Ioo.{0} 0 1) t →
+        ∀ {x : X},
+          MilgromSegal.Optimizes.{u_1} f t x →
+            DifferentiableAt.{0, 0, 0} ℝ (f x) t →
+              DifferentiableAt.{0, 0, 0} ℝ (MilgromSegal.value.{u_1} f) t →
+                Eq.{1} (deriv.{0, 0} (MilgromSegal.value.{u_1} f) t) (deriv.{0, 0} (f x) t)
+@MilgromSegal.right_derivative_inequality.{u_1} : ∀ {X : Type u_1} [Nonempty.{u_1 + 1} X] {f : X → ℝ → ℝ},
+  MilgromSegal.FiniteValue.{u_1} f →
+    ∀ {t d D : ℝ},
+      Membership.mem.{0, 0} (Set.Icc.{0} 0 1) t →
+        LT.lt.{0} t 1 →
+          ∀ {x : X},
+            MilgromSegal.Optimizes.{u_1} f t x →
+              HasDerivWithinAt.{0, 0} (f x) d (Set.Icc.{0} 0 1) t →
+                HasDerivWithinAt.{0, 0} (MilgromSegal.value.{u_1} f) D (Set.Ioi.{0} t) t → LE.le.{0} d D
+@MilgromSegal.left_derivative_inequality.{u_1} : ∀ {X : Type u_1} [Nonempty.{u_1 + 1} X] {f : X → ℝ → ℝ},
+  MilgromSegal.FiniteValue.{u_1} f →
+    ∀ {t d D : ℝ},
+      Membership.mem.{0, 0} (Set.Icc.{0} 0 1) t →
+        LT.lt.{0} 0 t →
+          ∀ {x : X},
+            MilgromSegal.Optimizes.{u_1} f t x →
+              HasDerivWithinAt.{0, 0} (f x) d (Set.Icc.{0} 0 1) t →
+                HasDerivWithinAt.{0, 0} (MilgromSegal.value.{u_1} f) D (Set.Iio.{0} t) t → LE.le.{0} D d
+@MilgromSegal.selected_derivative_integrable.{u_1} : ∀ {X : Type u_1} [Nonempty.{u_1 + 1} X] {f : X → ℝ → ℝ}
+  {b : ℝ → ℝ},
+  MilgromSegal.FiniteValue.{u_1} f →
+    (∀ (x : X), AbsolutelyContinuousOnInterval.{0} (f x) 0 1) →
+      IntervalIntegrable.{0} b MeasureTheory.volume.{0} 0 1 →
+        (∀ (x : X),
+            ∀ᵐ (t : ℝ), Membership.mem.{0, 0} (Set.Icc.{0} 0 1) t → LE.le.{0} (abs.{0} (deriv.{0, 0} (f x) t)) (b t)) →
+          (∀ (x : X) (t : ℝ), Membership.mem.{0, 0} (Set.Ioo.{0} 0 1) t → DifferentiableAt.{0, 0, 0} ℝ (f x) t) →
+            ∀ (sel : ℝ → X),
+              (∀ᵐ (t : ℝ), Membership.mem.{0, 0} (Set.Ioo.{0} 0 1) t → MilgromSegal.Optimizes.{u_1} f t (sel t)) →
+                IntervalIntegrable.{0} (fun t => deriv.{0, 0} (f (sel t)) t) MeasureTheory.volume.{0} 0 1
+@MilgromSegal.integral_envelope.{u_1} : ∀ {X : Type u_1} [Nonempty.{u_1 + 1} X] {f : X → ℝ → ℝ} {b : ℝ → ℝ},
+  MilgromSegal.FiniteValue.{u_1} f →
+    (∀ (x : X), AbsolutelyContinuousOnInterval.{0} (f x) 0 1) →
+      IntervalIntegrable.{0} b MeasureTheory.volume.{0} 0 1 →
+        (∀ (x : X),
+            ∀ᵐ (t : ℝ), Membership.mem.{0, 0} (Set.Icc.{0} 0 1) t → LE.le.{0} (abs.{0} (deriv.{0, 0} (f x) t)) (b t)) →
+          (∀ (x : X) (t : ℝ), Membership.mem.{0, 0} (Set.Ioo.{0} 0 1) t → DifferentiableAt.{0, 0, 0} ℝ (f x) t) →
+            ∀ (sel : ℝ → X),
+              (∀ᵐ (s : ℝ), Membership.mem.{0, 0} (Set.Ioo.{0} 0 1) s → MilgromSegal.Optimizes.{u_1} f s (sel s)) →
+                ∀ {t : ℝ},
+                  Membership.mem.{0, 0} (Set.Icc.{0} 0 1) t →
+                    Eq.{1} (MilgromSegal.value.{u_1} f t)
+                      (HAdd.hAdd.{0, 0, 0} (MilgromSegal.value.{u_1} f 0)
+                        (∫ (s : ℝ) in 0..t, deriv.{0, 0} (f (sel s)) s))
+@MilgromSegal.exists_optimizer_selection.{u_1} : ∀ {X : Type u_1} [Nonempty.{u_1 + 1} X] {f : X → ℝ → ℝ},
+  (∀ᵐ (t : ℝ), Membership.mem.{0, 0} (Set.Ioo.{0} 0 1) t → ∃ x, MilgromSegal.Optimizes.{u_1} f t x) →
+    ∃ sel, ∀ᵐ (t : ℝ), Membership.mem.{0, 0} (Set.Ioo.{0} 0 1) t → MilgromSegal.Optimizes.{u_1} f t (sel t)
+@MilgromSegal.milgrom_segal.{u_1} : ∀ {X : Type u_1} [Nonempty.{u_1 + 1} X] {f : X → ℝ → ℝ} {b : ℝ → ℝ},
+  MilgromSegal.FiniteValue.{u_1} f →
+    (∀ (x : X), AbsolutelyContinuousOnInterval.{0} (f x) 0 1) →
+      IntervalIntegrable.{0} b MeasureTheory.volume.{0} 0 1 →
+        (∀ (t : ℝ), Membership.mem.{0, 0} (Set.Icc.{0} 0 1) t → LE.le.{0} 0 (b t)) →
+          (∀ (x : X),
+              ∀ᵐ (t : ℝ),
+                Membership.mem.{0, 0} (Set.Icc.{0} 0 1) t → LE.le.{0} (abs.{0} (deriv.{0, 0} (f x) t)) (b t)) →
+            (∀ (x : X) (t : ℝ), Membership.mem.{0, 0} (Set.Ioo.{0} 0 1) t → DifferentiableAt.{0, 0, 0} ℝ (f x) t) →
+              (∀ᵐ (t : ℝ), Membership.mem.{0, 0} (Set.Ioo.{0} 0 1) t → ∃ x, MilgromSegal.Optimizes.{u_1} f t x) →
+                AbsolutelyContinuousOnInterval.{0} (MilgromSegal.value.{u_1} f) 0 1 ∧
+                  (∃ sel,
+                      ∀ᵐ (t : ℝ),
+                        Membership.mem.{0, 0} (Set.Ioo.{0} 0 1) t → MilgromSegal.Optimizes.{u_1} f t (sel t)) ∧
+                    ∀ (sel : ℝ → X),
+                      (∀ᵐ (t : ℝ),
+                          Membership.mem.{0, 0} (Set.Ioo.{0} 0 1) t → MilgromSegal.Optimizes.{u_1} f t (sel t)) →
+                        IntervalIntegrable.{0} (fun t => deriv.{0, 0} (f (sel t)) t) MeasureTheory.volume.{0} 0 1 ∧
+                          ∀ (t : ℝ),
+                            Membership.mem.{0, 0} (Set.Icc.{0} 0 1) t →
+                              Eq.{1} (MilgromSegal.value.{u_1} f t)
+                                (HAdd.hAdd.{0, 0, 0} (MilgromSegal.value.{u_1} f 0)
+                                  (∫ (s : ℝ) in 0..t, deriv.{0, 0} (f (sel s)) s))
+@MilgromSegal.value.{u_1} : {X : Type u_1} → (X → ℝ → ℝ) → ℝ → ℝ
+@MilgromSegal.FiniteValue.{u_1} : {X : Type u_1} → (X → ℝ → ℝ) → Prop
+@MilgromSegal.Optimizes.{u_1} : {X : Type u_1} → (X → ℝ → ℝ) → ℝ → X → Prop

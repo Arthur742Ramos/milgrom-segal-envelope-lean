@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite the immutable local or published commit used for verification."
+title: "Milgrom–Segal Envelope Theorems for Arbitrary Choice Sets in Lean"
+type: software
+authors:
+  - given-names: Arthur Freitas
+    family-names: Ramos
+  - given-names: David Barros
+    family-names: Hulak
+  - given-names: Ruy Jose Guerra Barretto de
+    family-names: Queiroz
+license: BSD-3-Clause

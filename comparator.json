@@ -1,0 +1,24 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "MilgromSegal.absolutelyContinuous_value",
+    "MilgromSegal.derivative_identity",
+    "MilgromSegal.right_derivative_inequality",
+    "MilgromSegal.left_derivative_inequality",
+    "MilgromSegal.selected_derivative_integrable",
+    "MilgromSegal.integral_envelope",
+    "MilgromSegal.exists_optimizer_selection",
+    "MilgromSegal.milgrom_segal"
+  ],
+  "definition_names": [
+    "MilgromSegal.value",
+    "MilgromSegal.FiniteValue",
+    "MilgromSegal.Optimizes"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

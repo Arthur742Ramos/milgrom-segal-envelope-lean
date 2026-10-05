@@ -1,0 +1,13 @@
+{
+  "pipeline_repository": "PalomarRegistry/PalomarSubmission",
+  "pipeline_commit": "d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44",
+  "execution_profile": "palomar-standard-v1",
+  "minimum_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "mathlib_commit": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "selected_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "render_file_cap_bytes": 8388608,
+  "verso_commits": {
+    "leanprover/lean4:v4.35.0-rc2": "9f8096e40b31715b1d8d5997f15a0bd832f7e37d",
+    "leanprover/lean4:v4.35.0-rc3": "8fc7a297f14d5adc1a551b5b4ecf283c08bd691f"
+  }
+}

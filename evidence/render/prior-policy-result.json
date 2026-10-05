@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "pipeline_commit": "65f0154ed776cd26c224254aa57b379137f28b0d",
+  "verso_commit": "9f8096e40b31715b1d8d5997f15a0bd832f7e37d",
+  "toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "render_file_cap_bytes": 8388608,
+  "challenge_sha256": "6875de954644f56b6a605f73c8e28eaeedbc514261f8dfdcff805bc038fa44b1",
+  "raw_challenge_html_bytes": 291976,
+  "sanitized_challenge_html_bytes": 290188,
+  "scope": "Exact local Verso, official trusted printer and sanitizer; no Linux bubblewrap or hosted run"
+}

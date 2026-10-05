@@ -1,0 +1,8 @@
+'MilgromSegal.absolutelyContinuous_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MilgromSegal.derivative_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MilgromSegal.right_derivative_inequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MilgromSegal.left_derivative_inequality' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MilgromSegal.selected_derivative_integrable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MilgromSegal.integral_envelope' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MilgromSegal.exists_optimizer_selection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MilgromSegal.milgrom_segal' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,43 @@
+{
+  "state": "local package complete; unpublished",
+  "verified_at": "2026-10-05",
+  "core_sha256": "afd689756b9a2cc7da65c2d92765c92cf8332944cddeb392f11ca22d11076ebc",
+  "challenge_sha256": "6875de954644f56b6a605f73c8e28eaeedbc514261f8dfdcff805bc038fa44b1",
+  "policy_commit": "d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44",
+  "passed": [
+    "independent primary-source statement review",
+    "independent mathematical implementation review",
+    "independent final package source/prose-to-binder review",
+    "independent current official policy review",
+    "full Lean build including infinite and uncountable choice examples",
+    "official Comparator: Lean default, NanoDa, con-ron with current --jobs=2",
+    "transitive audit: all 25 authored namespace constants use standard axioms only",
+    "official metadata, author, classification and all-contract alignment validation",
+    "standalone Challenge regeneration and dependency checks",
+    "current-policy exact pinned Verso render, separate trusted declaration printer and 8 MiB sanitizer",
+    "full standard-profile workflow paired pins and official request parser"
+  ],
+  "render": {
+    "status": "pass",
+    "pipeline_commit": "d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44",
+    "verso_commit": "9f8096e40b31715b1d8d5997f15a0bd832f7e37d",
+    "toolchain": "leanprover/lean4:v4.35.0-rc2",
+    "render_file_cap_bytes": 8388608,
+    "challenge_sha256": "6875de954644f56b6a605f73c8e28eaeedbc514261f8dfdcff805bc038fa44b1",
+    "raw_challenge_html_bytes": 291976,
+    "sanitized_challenge_html_bytes": 290188,
+    "scope": "Exact local Verso, official trusted printer and sanitizer; no Linux bubblewrap or hosted run"
+  },
+  "remaining_external_gates": [
+    "artifact-specific repository publication approval and repository write authority",
+    "official full hosted mechanical preflight including Linux confinement",
+    "any separately authorized editorial review, registry intake and registration"
+  ],
+  "limits": [
+    "Local macOS Comparator and renderer do not reproduce Linux bubblewrap confinement.",
+    "Challenge intentionally has contract theorem placeholders; library, Examples and Solution have zero proof holes or custom axioms.",
+    "AI reviews do not constitute human specialist review or original-author endorsement.",
+    "Scope is Theorems 1 and 2, not the whole paper; no exhaustive novelty claim."
+  ],
+  "external_activity": "No repository creation/publication, push, PR, hosted dispatch, intake or registration."
+}

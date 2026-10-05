@@ -1,0 +1,71 @@
+{
+  "audit_declarations": [
+    {
+      "declaration": "theorem MilgromSegal.absolutelyContinuous_value.{u_1} {X : Type u_1} [Nonempty X] {f : X \u2192 Real \u2192 Real} {b : Real \u2192 Real}\n  (hfin : MilgromSegal.FiniteValue f) (hf : \u2200 (x : X), AbsolutelyContinuousOnInterval (f x) 0 1)\n  (hb : IntervalIntegrable b MeasureTheory.MeasureSpace.volume 0 1)\n  (hbound :\n    \u2200 (x : X),\n      Filter.Eventually (fun t => Membership.mem (Set.Icc 0 1) t \u2192 LE.le (abs (deriv (f x) t)) (b t))\n        (MeasureTheory.ae MeasureTheory.MeasureSpace.volume)) :\n  AbsolutelyContinuousOnInterval (MilgromSegal.value f) 0 1",
+      "name": "MilgromSegal.absolutelyContinuous_value"
+    },
+    {
+      "declaration": "theorem MilgromSegal.derivative_identity.{u_1} {X : Type u_1} [Nonempty X] {f : X \u2192 Real \u2192 Real}\n  (hfin : MilgromSegal.FiniteValue f) {t : Real} (ht : Membership.mem (Set.Ioo 0 1) t) {x : X}\n  (hx : MilgromSegal.Optimizes f t x) (hfx : DifferentiableAt Real (f x) t)\n  (hV : DifferentiableAt Real (MilgromSegal.value f) t) : Eq (deriv (MilgromSegal.value f) t) (deriv (f x) t)",
+      "name": "MilgromSegal.derivative_identity"
+    },
+    {
+      "declaration": "theorem MilgromSegal.right_derivative_inequality.{u_1} {X : Type u_1} [Nonempty X] {f : X \u2192 Real \u2192 Real}\n  (hfin : MilgromSegal.FiniteValue f) {t d D : Real} (ht : Membership.mem (Set.Icc 0 1) t) (ht1 : LT.lt t 1) {x : X}\n  (hx : MilgromSegal.Optimizes f t x) (hfx : HasDerivWithinAt (f x) d (Set.Icc 0 1) t)\n  (hV : HasDerivWithinAt (MilgromSegal.value f) D (Set.Ioi t) t) : LE.le d D",
+      "name": "MilgromSegal.right_derivative_inequality"
+    },
+    {
+      "declaration": "theorem MilgromSegal.left_derivative_inequality.{u_1} {X : Type u_1} [Nonempty X] {f : X \u2192 Real \u2192 Real}\n  (hfin : MilgromSegal.FiniteValue f) {t d D : Real} (ht : Membership.mem (Set.Icc 0 1) t) (ht0 : LT.lt 0 t) {x : X}\n  (hx : MilgromSegal.Optimizes f t x) (hfx : HasDerivWithinAt (f x) d (Set.Icc 0 1) t)\n  (hV : HasDerivWithinAt (MilgromSegal.value f) D (Set.Iio t) t) : LE.le D d",
+      "name": "MilgromSegal.left_derivative_inequality"
+    },
+    {
+      "declaration": "theorem MilgromSegal.selected_derivative_integrable.{u_1} {X : Type u_1} [Nonempty X] {f : X \u2192 Real \u2192 Real} {b : Real \u2192 Real}\n  (hfin : MilgromSegal.FiniteValue f) (hf : \u2200 (x : X), AbsolutelyContinuousOnInterval (f x) 0 1)\n  (hb : IntervalIntegrable b MeasureTheory.MeasureSpace.volume 0 1)\n  (hbound :\n    \u2200 (x : X),\n      Filter.Eventually (fun t => Membership.mem (Set.Icc 0 1) t \u2192 LE.le (abs (deriv (f x) t)) (b t))\n        (MeasureTheory.ae MeasureTheory.MeasureSpace.volume))\n  (hdiff : \u2200 (x : X) (t : Real), Membership.mem (Set.Ioo 0 1) t \u2192 DifferentiableAt Real (f x) t) (sel : Real \u2192 X)\n  (hsel :\n    Filter.Eventually (fun t => Membership.mem (Set.Ioo 0 1) t \u2192 MilgromSegal.Optimizes f t (sel t))\n      (MeasureTheory.ae MeasureTheory.MeasureSpace.volume)) :\n  IntervalIntegrable (fun t => deriv (f (sel t)) t) MeasureTheory.MeasureSpace.volume 0 1",
+      "name": "MilgromSegal.selected_derivative_integrable"
+    },
+    {
+      "declaration": "theorem MilgromSegal.integral_envelope.{u_1} {X : Type u_1} [Nonempty X] {f : X \u2192 Real \u2192 Real} {b : Real \u2192 Real}\n  (hfin : MilgromSegal.FiniteValue f) (hf : \u2200 (x : X), AbsolutelyContinuousOnInterval (f x) 0 1)\n  (hb : IntervalIntegrable b MeasureTheory.MeasureSpace.volume 0 1)\n  (hbound :\n    \u2200 (x : X),\n      Filter.Eventually (fun t => Membership.mem (Set.Icc 0 1) t \u2192 LE.le (abs (deriv (f x) t)) (b t))\n        (MeasureTheory.ae MeasureTheory.MeasureSpace.volume))\n  (hdiff : \u2200 (x : X) (t : Real), Membership.mem (Set.Ioo 0 1) t \u2192 DifferentiableAt Real (f x) t) (sel : Real \u2192 X)\n  (hsel :\n    Filter.Eventually (fun s => Membership.mem (Set.Ioo 0 1) s \u2192 MilgromSegal.Optimizes f s (sel s))\n      (MeasureTheory.ae MeasureTheory.MeasureSpace.volume))\n  {t : Real} (ht : Membership.mem (Set.Icc 0 1) t) :\n  Eq (MilgromSegal.value f t)\n    (HAdd.hAdd (MilgromSegal.value f 0)\n      (intervalIntegral (fun s => deriv (f (sel s)) s) 0 t MeasureTheory.MeasureSpace.volume))",
+      "name": "MilgromSegal.integral_envelope"
+    },
+    {
+      "declaration": "theorem MilgromSegal.exists_optimizer_selection.{u_1} {X : Type u_1} [Nonempty X] {f : X \u2192 Real \u2192 Real}\n  (hopt :\n    Filter.Eventually (fun t => Membership.mem (Set.Ioo 0 1) t \u2192 Exists fun x => MilgromSegal.Optimizes f t x)\n      (MeasureTheory.ae MeasureTheory.MeasureSpace.volume)) :\n  Exists fun sel =>\n    Filter.Eventually (fun t => Membership.mem (Set.Ioo 0 1) t \u2192 MilgromSegal.Optimizes f t (sel t))\n      (MeasureTheory.ae MeasureTheory.MeasureSpace.volume)",
+      "name": "MilgromSegal.exists_optimizer_selection"
+    },
+    {
+      "declaration": "theorem MilgromSegal.milgrom_segal.{u_1} {X : Type u_1} [Nonempty X] {f : X \u2192 Real \u2192 Real} {b : Real \u2192 Real}\n  (hfin : MilgromSegal.FiniteValue f) (hf : \u2200 (x : X), AbsolutelyContinuousOnInterval (f x) 0 1)\n  (hb : IntervalIntegrable b MeasureTheory.MeasureSpace.volume 0 1)\n  (_hb0 : \u2200 (t : Real), Membership.mem (Set.Icc 0 1) t \u2192 LE.le 0 (b t))\n  (hbound :\n    \u2200 (x : X),\n      Filter.Eventually (fun t => Membership.mem (Set.Icc 0 1) t \u2192 LE.le (abs (deriv (f x) t)) (b t))\n        (MeasureTheory.ae MeasureTheory.MeasureSpace.volume))\n  (hdiff : \u2200 (x : X) (t : Real), Membership.mem (Set.Ioo 0 1) t \u2192 DifferentiableAt Real (f x) t)\n  (hopt :\n    Filter.Eventually (fun t => Membership.mem (Set.Ioo 0 1) t \u2192 Exists fun x => MilgromSegal.Optimizes f t x)\n      (MeasureTheory.ae MeasureTheory.MeasureSpace.volume)) :\n  And (AbsolutelyContinuousOnInterval (MilgromSegal.value f) 0 1)\n    (And\n      (Exists fun sel =>\n        Filter.Eventually (fun t => Membership.mem (Set.Ioo 0 1) t \u2192 MilgromSegal.Optimizes f t (sel t))\n          (MeasureTheory.ae MeasureTheory.MeasureSpace.volume))\n      (\u2200 (sel : Real \u2192 X),\n        Filter.Eventually (fun t => Membership.mem (Set.Ioo 0 1) t \u2192 MilgromSegal.Optimizes f t (sel t))\n            (MeasureTheory.ae MeasureTheory.MeasureSpace.volume) \u2192\n          And (IntervalIntegrable (fun t => deriv (f (sel t)) t) MeasureTheory.MeasureSpace.volume 0 1)\n            (\u2200 (t : Real),\n              Membership.mem (Set.Icc 0 1) t \u2192\n                Eq (MilgromSegal.value f t)\n                  (HAdd.hAdd (MilgromSegal.value f 0)\n                    (intervalIntegral (fun s => deriv (f (sel s)) s) 0 t MeasureTheory.MeasureSpace.volume)))))",
+      "name": "MilgromSegal.milgrom_segal"
+    },
+    {
+      "declaration": "def MilgromSegal.value.{u_1} {X : Type u_1} (f : X \u2192 Real \u2192 Real) (t : Real) : Real",
+      "name": "MilgromSegal.value"
+    },
+    {
+      "declaration": "def MilgromSegal.FiniteValue.{u_1} {X : Type u_1} (f : X \u2192 Real \u2192 Real) : Prop",
+      "name": "MilgromSegal.FiniteValue"
+    },
+    {
+      "declaration": "def MilgromSegal.Optimizes.{u_1} {X : Type u_1} (f : X \u2192 Real \u2192 Real) (t : Real) (x : X) : Prop",
+      "name": "MilgromSegal.Optimizes"
+    }
+  ],
+  "declarations": [
+    "MilgromSegal.absolutelyContinuous_value",
+    "MilgromSegal.derivative_identity",
+    "MilgromSegal.right_derivative_inequality",
+    "MilgromSegal.left_derivative_inequality",
+    "MilgromSegal.selected_derivative_integrable",
+    "MilgromSegal.integral_envelope",
+    "MilgromSegal.exists_optimizer_selection",
+    "MilgromSegal.milgrom_segal",
+    "MilgromSegal.value",
+    "MilgromSegal.FiniteValue",
+    "MilgromSegal.Optimizes"
+  ],
+  "imports": [
+    "Mathlib.Analysis.Calculus.LocalExtr.Basic",
+    "Mathlib.MeasureTheory.Integral.IntervalIntegral.AbsolutelyContinuousFun",
+    "Mathlib.Tactic"
+  ],
+  "module_doc": null,
+  "schema_version": 3,
+  "solution_imports": [
+    "MilgromSegal"
+  ]
+}

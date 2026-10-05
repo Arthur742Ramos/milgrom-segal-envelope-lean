@@ -1,0 +1,29 @@
+{
+  "checked_on": "2026-10-05",
+  "policy_commit": "d4e41c1d5b0d114c4859e6e5831dc6d3ad1d0d44",
+  "request_parser": "pass",
+  "request_id": "milgromsg001",
+  "formalization_metadata_parser": "pass",
+  "comparator_config_parser": "pass",
+  "shadowing_dependency": {
+    "milgrom-segal-envelope-lean": null,
+    "renderer-workspace": null
+  },
+  "standard_profile": "palomar-standard-v1",
+  "profile_sha256": "eb97b7b548c5d016967434818f0ed48a215e7fdc15528f564ab21ff2927cfd69",
+  "supported_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "render_file_cap_bytes": 8388608,
+  "protected_kernels_example": {
+    "nanoda": [
+      "/toolchain/bin/nanoda_bin"
+    ],
+    "con-ron": [
+      "/toolchain/bin/con-ron",
+      "--jobs=2"
+    ]
+  },
+  "trusted_printer_source_unchanged": true,
+  "challenge_sha256": "6875de954644f56b6a605f73c8e28eaeedbc514261f8dfdcff805bc038fa44b1",
+  "package_files_modified": false,
+  "heavy_builds_or_dispatch": false
+}

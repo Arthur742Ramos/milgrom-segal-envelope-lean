@@ -1,0 +1,39 @@
+{
+  "source_files_sha256": {
+    ".github/workflows/palomar-preflight.yml": "40bf6360aa0aeda833e931c1fd5683df5b82af9689020eb522eb46a624ed3b03",
+    ".gitignore": "e49d41fff79c028c202fbdb2e445ee7337fb8db67593c8975cb2294acea1878b",
+    "AllConstantsAudit.lean": "33925e26104100bad14ce3599ca18c01f6efe28c6289a1f82e68f0c4e3c4e9c6",
+    "Audit.lean": "b15c9eb3148176d11ea425bb1cac8eb1d327aa8339aae4b712f2d1d2e0b70e91",
+    "CITATION.cff": "09061312ea4284a8ca22112e7d468aede99bd1140d9833e4e1a2ced17f833a6b",
+    "Challenge.lean": "6875de954644f56b6a605f73c8e28eaeedbc514261f8dfdcff805bc038fa44b1",
+    "ContractAudit.lean": "e468ad30a9dfea1f4494d1c145c47fef5a6b866ef96397e408ccca58023aff20",
+    "Examples.lean": "73b5b82b75ca2bee8dc11cda60e8048586ba0dcca582d3437aade009a8528a23",
+    "LICENSE": "5c92d4e8aa0139d2c1810332bf69efcd6737d0e63d43d20c4ee9437ff0533d1f",
+    "MilgromSegal.lean": "afd689756b9a2cc7da65c2d92765c92cf8332944cddeb392f11ca22d11076ebc",
+    "README.md": "22db22a5bbaf28323b12f0a4bcdd8e0d390743c2218936d17e4456b07e9d733a",
+    "Solution.lean": "ba3fa7bd47941593c07b16139e01fdf94abfdc367969f30e7af1df552bc3c282",
+    "comparator.json": "21cb12d2cd9d3edd3cf0e4360228b7f421735b43acd9e6e785c1790553b369ab",
+    "formalization.yaml": "9ac1f1125e8fae04ae1bd74a4243b76f0f69ddd9e1bd4b84773c15311bc53e58",
+    "lake-manifest.json": "2fcdd519ac55bd369c0bc531a61e9bff1007f30373d5fd3d84908289021769d9",
+    "lakefile.toml": "d1b064802d2c4d8606db31628fb2ec8b235fab856401b40a28c90a6a1786f287",
+    "lean-toolchain": "8dc8d6f560141069d9073e370611716ef77ada0da8ffa37e2149f44b2e63ac7a",
+    "policy-pins.json": "083eb2b6da20b00c3025a85c56405cb277c3e27e112ae5919703f75fa5065200",
+    "scripts/check_package.py": "0763b05ed9c56e3b329b108cc9e00df9ca8f90da5382c03355f5c325cc011119",
+    "scripts/make_challenge.py": "4e14a56acef01e19d5848b6a57a953f706b2bc2323cd8112bf448610f2491e53",
+    "scripts/render_local.py": "3297db566382b4209f5d5c23d810785b925ada5767682eecac430984078581ad",
+    "scripts/verification_config.py": "3291861250d1fc192baa261f5684fd7e982a6bec5055d92dd26b646f0c227742",
+    "scripts/verify_local.sh": "8e0f28fe560e014a562ab19a919dd0a4ea45aece04dfde70fe0b04b9a92a22af",
+    "scripts/verify_policy.py": "b1ca00cd504d1e0161e5e2a9652c42ae804e9e431bf6186ebd65d86cce3cd402"
+  },
+  "challenge_bytes": 4706,
+  "challenge_lines": 100,
+  "comparison": "eight substantive theorems and three genuine definitions",
+  "proof_holes": "none in library, examples or Solution; intentional Challenge placeholders",
+  "all_authored_constants_audited": 25,
+  "kernels": [
+    "Lean default",
+    "nanoda",
+    "con-ron"
+  ],
+  "local_platform": "macOS arm64; no Linux bubblewrap confinement"
+}

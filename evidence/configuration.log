@@ -1,0 +1,10 @@
+Official configuration validator passed; local bundled NanoDa and con-ron enabled
+{
+  "nanoda": [
+    "/Users/arthur/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/bin/nanoda_bin"
+  ],
+  "con-ron": [
+    "/Users/arthur/.elan/toolchains/leanprover--lean4---v4.35.0-rc2/bin/con-ron",
+    "--jobs=2"
+  ]
+}

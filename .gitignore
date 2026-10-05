@@ -1,0 +1,4 @@
+.lake/
+Probe.lean
+__pycache__/
+*.pyc
